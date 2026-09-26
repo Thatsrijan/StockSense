@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #714B67;
+    --primary-hover: #5a3b52;
+    --secondary: #008784;
+    --secondary-hover: #006f6c;
+  }
+
+  body {
+    @apply antialiased text-slate-800 bg-[#f8fafc] min-h-screen font-sans;
+  }
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Subtle enterprise transitions */
+.transition-smooth {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Status Badge Utilities */
+.badge-draft {
+  @apply bg-slate-100 text-slate-700 border border-slate-300;
+}
+.badge-waiting {
+  @apply bg-amber-50 text-amber-700 border border-amber-300;
+}
+.badge-ready {
+  @apply bg-blue-50 text-blue-700 border border-blue-300;
+}
+.badge-done {
+  @apply bg-emerald-50 text-emerald-700 border border-emerald-300;
+}
+.badge-canceled {
+  @apply bg-rose-50 text-rose-700 border border-rose-300;
+}
+
+/* Print view styling for picking/delivery slips */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
